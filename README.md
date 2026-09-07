@@ -13,10 +13,23 @@ build, rather than reading about it in a list of bullet points.
 ## Tech Stack
 
 - React (JavaScript)
+- Vite
 - Deployed on Vercel
+
+## Development
+
+```bash
+npm install
+npm run dev      # start the dev server
+npm run build    # production build
+npm run lint     # oxlint
+```
 
 ## Status
 
-Early stage. The project is scaffolded and deploying automatically on every
-push to `main`, but it still serves the default template: the layout and the
-featured projects are yet to be built.
+The portfolio layout is live: hero, about, selected projects and contact, in a
+single responsive page with automatic light and dark themes. Every push to
+`main` deploys automatically.
+
+Next up: replacing the placeholder cards in `src/data/projects.js` with the
+real featured projects.
