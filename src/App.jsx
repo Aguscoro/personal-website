@@ -36,9 +36,8 @@ function Hero() {
       <p className="hero-role">Software Developer</p>
       <h1 className="hero-name">Agustín Corominas</h1>
       <p className="hero-pitch">
-        {/* TODO: replace with your own one-line pitch. */}
-        I build web applications with JavaScript and React — from the interface
-        down to the data that feeds it.
+        I build for the web — from React applications to email templates that
+        have to render the same everywhere.
       </p>
       <div className="hero-actions">
         <a className="button button-primary" href="#projects">
@@ -57,15 +56,20 @@ function About() {
     <section className="section" id="about">
       <div className="container">
         <h2 className="section-title">About</h2>
-        {/* TODO: replace with your own bio. */}
         <p className="about-text">
-          I am a software developer focused on the web. I enjoy taking a rough
-          idea and turning it into something people can actually open in a
-          browser and use.
+          I'm a software developer working on the web. Since 2025 I've been at
+          VML, building HTML and CSS email templates for a global technology
+          client and deploying them through Adobe Experience Manager — code
+          that has to render the same across dozens of inboxes, with no second
+          chance once it goes out. It taught me to get the details right the
+          first time.
         </p>
         <p className="about-text">
-          I work mainly with JavaScript, React and Node.js, and I care about
-          writing code that the next person can read without a guided tour.
+          On my own time I work with JavaScript, React and Node.js, which is
+          where the projects below come from. Most of what I use I picked up
+          when a project needed it — a new stack is a matter of time, not of
+          category — and I try to leave behind code the next person can read
+          without a guided tour.
         </p>
       </div>
     </section>
