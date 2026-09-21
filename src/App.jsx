@@ -109,6 +109,42 @@ function useReveal() {
   }, [])
 }
 
+/* Copy to clipboard -------------------------------------------------------- */
+
+// The address is on screen either way: this only removes a step. If the
+// clipboard is unavailable (insecure context, denied permission) the button
+// stays silent rather than claiming a copy that did not happen.
+function CopyEmail() {
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    if (!copied) return
+    const timer = setTimeout(() => setCopied(false), 2000)
+    return () => clearTimeout(timer)
+  }, [copied])
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL)
+      setCopied(true)
+    } catch {
+      // Leave the address for the visitor to select by hand.
+    }
+  }
+
+  return (
+    <button
+      className="copy-email"
+      type="button"
+      onClick={copy}
+      data-copied={copied}
+      aria-label={copied ? 'Email address copied' : 'Copy email address'}
+    >
+      <span aria-hidden="true">{copied ? 'Copied' : 'Copy'}</span>
+    </button>
+  )
+}
+
 /* Sections ----------------------------------------------------------------- */
 
 function Nav() {
@@ -167,7 +203,7 @@ function Hero() {
         <a className="button button-primary" href="#projects">
           View projects
         </a>
-        <a className="button" href={`mailto:${EMAIL}`}>
+        <a className="button" href="#contact">
           Get in touch
         </a>
       </div>
@@ -260,9 +296,12 @@ function Contact() {
           Open to new opportunities and collaborations. The fastest way to reach
           me is email.
         </p>
-        <a className="contact-email" href={`mailto:${EMAIL}`} data-reveal>
-          {EMAIL}
-        </a>
+        <div className="contact-email-row" data-reveal>
+          <a className="contact-email" href={`mailto:${EMAIL}`}>
+            {EMAIL}
+          </a>
+          <CopyEmail />
+        </div>
         <div className="contact-links" data-reveal>
           <a
             className="button"
