@@ -57,12 +57,11 @@ function About() {
       <div className="container">
         <h2 className="section-title">About</h2>
         <p className="about-text">
-          I'm a software developer working on the web. Since 2025 I've been at
-          VML, building HTML and CSS email templates for a global technology
-          client and deploying them through Adobe Experience Manager — code
-          that has to render the same across dozens of inboxes, with no second
-          chance once it goes out. It taught me to get the details right the
-          first time.
+          I'm a software developer. Since 2025 I've been at VML, building
+          HTML and CSS email templates for a global technology client and
+          deploying them through Adobe Experience Manager — code that has to
+          render the same across dozens of inboxes, with no second chance once
+          it goes out. It taught me to get the details right the first time.
         </p>
         <p className="about-text">
           On my own time I work with JavaScript, React and Node.js, which is
