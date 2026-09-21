@@ -6,10 +6,10 @@ export const projects = [
     id: 'celicatesen',
     title: 'Celicatesen',
     description:
-      'A storefront and admin panel for a working gluten-free bakery, backed by a REST API I wrote from scratch: product CRUD on Express and MongoDB, a JWT-authenticated admin area, and hashed credentials.',
+      'A storefront for a working gluten-free bakery, running on a REST API I wrote from scratch: the catalogue is served by Express and MongoDB, and a JWT-authenticated panel behind it manages the products.',
     tags: ['JavaScript', 'Node.js', 'Express', 'MongoDB'],
     repo: 'https://github.com/Aguscoro/Celicatesen',
-    demo: null,
+    demo: 'https://celicatesen.vercel.app',
   },
   {
     id: 'countries-mvvm',
