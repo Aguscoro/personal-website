@@ -1,33 +1,23 @@
-// TODO: replace these placeholders with the real featured projects.
-// Each entry renders one card in the Projects section.
+// The featured projects rendered as cards in the Projects section.
 // `repo` and `demo` are optional — leave them out and the link is not rendered.
 
 export const projects = [
   {
-    id: 'project-one',
-    title: 'Project One',
+    id: 'celicatesen',
+    title: 'Celicatesen',
     description:
-      'One or two sentences on the problem this project solves and the part you built.',
-    tags: ['React', 'JavaScript'],
-    repo: 'https://github.com/Aguscoro',
+      'A storefront and admin panel for a working gluten-free bakery, backed by a REST API I wrote from scratch: product CRUD on Express and MongoDB, a JWT-authenticated admin area, and hashed credentials.',
+    tags: ['JavaScript', 'Node.js', 'Express', 'MongoDB'],
+    repo: 'https://github.com/Aguscoro/Celicatesen',
     demo: null,
   },
   {
-    id: 'project-two',
-    title: 'Project Two',
+    id: 'countries-mvvm',
+    title: 'Countries MVVM',
     description:
-      'One or two sentences on the problem this project solves and the part you built.',
-    tags: ['Node.js', 'API'],
-    repo: 'https://github.com/Aguscoro',
-    demo: null,
-  },
-  {
-    id: 'project-three',
-    title: 'Project Three',
-    description:
-      'One or two sentences on the problem this project solves and the part you built.',
-    tags: ['TypeScript'],
-    repo: 'https://github.com/Aguscoro',
+      'A cross-platform mobile app in .NET MAUI, organised around MVVM with its own service layer for navigation and device sensors, and covered by unit and integration tests.',
+    tags: ['C#', '.NET MAUI', 'MVVM', 'Testing'],
+    repo: 'https://github.com/Aguscoro/Parcial-I-Moviles',
     demo: null,
   },
 ]

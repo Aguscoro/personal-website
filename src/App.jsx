@@ -64,11 +64,13 @@ function About() {
           it goes out. It taught me to get the details right the first time.
         </p>
         <p className="about-text">
-          On my own time I work with JavaScript, React and Node.js, which is
-          where the projects below come from. Most of what I use I picked up
-          when a project needed it — a new stack is a matter of time, not of
-          category — and I try to leave behind code the next person can read
-          without a guided tour.
+          Outside of work I've built a full-stack JavaScript application with
+          its own Express and MongoDB API, and a cross-platform mobile app in
+          C# with MVVM and a test suite — both below. Most of what I use I
+          picked up when a project needed it: a new stack is a matter of time,
+          not of category, and this site is the most recent example, built in
+          React. I try to leave behind code the next person can read without a
+          guided tour.
         </p>
       </div>
     </section>
