@@ -1,34 +1,63 @@
+/* Tokens ------------------------------------------------------------------ */
+
 :root {
-  --bg: #fbfbfa;
+  color-scheme: light;
+
+  --bg: #faf8f4;
+  --bg-tint: #f3efe8;
   --surface: #ffffff;
-  --text: #1a1a19;
-  --muted: #66665f;
-  --border: #e3e3df;
-  --accent: #0f766e;
-  --accent-soft: #0f766e14;
+  --text: #1a1815;
+  --muted: #6d6860;
+  --border: #e4dfd6;
+  --accent: #a03e1e;
+  --accent-soft: #a03e1e14;
+  --accent-ink: #fdf8f5;
 
-  --max-width: 880px;
-  --radius: 10px;
+  --max-width: 1060px;
+  --measure: 60ch;
+  --gutter: clamp(24px, 5vw, 56px);
+  --radius: 4px;
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     monospace;
-
-  color-scheme: light dark;
 }
 
+/* Dark by system preference, unless the visitor chose light explicitly. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131314;
-    --surface: #1b1b1d;
-    --text: #ececea;
-    --muted: #9d9d97;
-    --border: #2e2e31;
-    --accent: #2dd4bf;
-    --accent-soft: #2dd4bf1a;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg: #131211;
+    --bg-tint: #1b1918;
+    --surface: #1a1817;
+    --text: #edeae4;
+    --muted: #9b958c;
+    --border: #2d2a27;
+    --accent: #e08a68;
+    --accent-soft: #e08a681a;
+    --accent-ink: #191513;
   }
 }
+
+/* Dark by explicit choice. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #131211;
+  --bg-tint: #1b1918;
+  --surface: #1a1817;
+  --text: #edeae4;
+  --muted: #9b958c;
+  --border: #2d2a27;
+  --accent: #e08a68;
+  --accent-soft: #e08a681a;
+  --accent-ink: #191513;
+}
+
+/* Base -------------------------------------------------------------------- */
 
 *,
 *::before,
@@ -50,21 +79,31 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 img,
@@ -78,15 +117,38 @@ ul {
   padding: 0;
 }
 
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 2px;
+}
+
+/* Reveal on scroll. Elements stay visible unless JS opts in, so the page
+   still reads correctly without scripting or with reduced motion. */
+html[data-reveal-ready] [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+html[data-reveal-ready] [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  html[data-reveal-ready] [data-reveal] {
+    opacity: 1;
+    transform: none;
   }
 
   *,

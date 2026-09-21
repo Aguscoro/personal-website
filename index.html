@@ -7,16 +7,32 @@
     <title>Agustín Corominas — Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Agustín Corominas, software developer working with JavaScript, React and Node.js."
+      content="Portfolio of Agustín Corominas, a software developer building for the web — from React applications to email templates that have to render the same everywhere."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Agustín Corominas — Portfolio" />
     <meta
       property="og:description"
-      content="Portfolio of Agustín Corominas, software developer working with JavaScript, React and Node.js."
+      content="Portfolio of Agustín Corominas, a software developer building for the web — from React applications to email templates that have to render the same everywhere."
     />
     <meta property="og:url" content="https://agustin-corominas.vercel.app" />
     <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Replay a remembered theme choice before the first paint, so the page
+      // never flashes the wrong one. Kept inline and tiny on purpose.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          if (stored === 'dark' || stored === 'light') {
+            document.documentElement.setAttribute('data-theme', stored)
+          }
+        } catch (error) {
+          // Storage blocked: fall back to the system preference.
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
